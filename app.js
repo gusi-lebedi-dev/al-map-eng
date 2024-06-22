@@ -76,11 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 return number < 0 ? `-${result}` : result;
             }
 
+            function strEng(number) {
+                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+            }
             infoCountry.classList.add('open-info-country')
-            countryBlock.innerHTML = "Страна: " + "<span class='text-green'>" + country + "</span>"
-            totalBlock.innerHTML = "Общая численность населения: " + "<span class='text-green'>" + abbreviateNumber(total) + " млн. человек</span>"
-            numberBlock.innerHTML = "Количество пациентов с ревматоидным артритом, согласно распространенности: "
-                + "<span class='text-green'>" + getFirstThreeDigits(number) + textMil + "</span>"
+            countryBlock.innerHTML = "Location: " + "<span class='text-green'>" + country + "</span>"
+            totalBlock.innerHTML = "Total Population: " + "<span class='text-green'>" + abbreviateNumber(total) + " million</span>"
+            numberBlock.innerHTML = "Number of prevalent cases: "
+                + "<span class='text-green'>" + strEng(number) + textMil + "</span>"
         })
     })
 })
