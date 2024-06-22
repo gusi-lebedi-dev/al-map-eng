@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.map {
+    margin-bottom: 80px;
+}
+
+.info-country-block {
+    max-width: 1920px;
+    font-family: 'Mont', sans-serif;
+}
+
+.info-country-block svg {
+    width: 100%;
+    margin-bottom: 80px;
+    height: 100%;
+}
+
+.map-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.map-title span {
+    background: linear-gradient(90deg, #009946 0%, #6CA7DE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+rect[data-country]{
+    fill: rgba(0, 153, 70, 0.3);
+}
+path[data-country] {
+    fill: rgba(0, 153, 70, 0.3);
+    opacity: 100%;
+}
+rect,
+path {
+    fill: rgba(227, 230, 235, 1);
+    stroke: black;
+    stroke-width: 0;
+    stroke-opacity: 1;
+}
+rect[data-country].map-hover,
+path[data-country].map-hover {
+    fill: rgba(0, 153, 70, 1);
+}
+rect[data-country].active,
+path[data-country].active {
+    fill: rgba(0, 153, 70, 1);
+}
+
+
+.info-country {
+    display: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: #303C48;
+}
+
+.country {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.total,
+.number {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.open-info-country {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.open-info-country span {
+    flex-basis: 100%;
+}
+
+.open-info-country span:first-child {
+    margin-bottom: 10px;
+}
+
+.text-green {
+    color: #009946;
+}
+
+.total .text-green,
+.number .text-green {
+    display: inline;
+}
+
+@media screen and (max-width: 1076px) {
+    .map-title {
+        font-size: 36px;
+    }
+    .total .text-green,
+    .number .text-green {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .info-country-block svg {
+        margin-bottom: 30px;
+    }
+
+    .map-title {
+        font-size: 30px;
+    }
+
+    .country {
+        font-size: 22px;
+    }
+
+    .total, .number {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .map-title {
+        font-size: 24px;
+    }
+
+    .country {
+        font-size: 18px;
+    }
+
+    .total, .number {
+        font-size: 14px;
+    }
+
+
+}
